@@ -64,3 +64,11 @@ th, td {
 .navbar a:hover {
     text-decoration: underline;
 }
+
+
+
+/* CATALOGO */
+
+.hidden {
+    display: none;
+}

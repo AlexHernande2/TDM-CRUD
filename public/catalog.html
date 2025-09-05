@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
     <nav class="navbar">
         <ul>
@@ -20,6 +22,18 @@
         <!-- Aquí se van a renderizar las tarjetas con los items -->
     </div>
 
+    <!-- MODAL -->
+    <div id="itemModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <h2 id="modal-name"></h2>
+            <img id="modal-img" src="" alt="Imagen del ítem">
+            <p id="modal-desc"></p>
+            <p><strong>Precio:</strong> <span id="modal-price"></span></p>
+        </div>
+    </div>
+
     <script type="module" src="./js/catalog.js"></script>
 </body>
+
 </html>
