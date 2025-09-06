@@ -1,3 +1,10 @@
+/* index.html */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background:var(--background);
+}
+
 :root {
     --background: #dfdfdffb;
     --button-color: #007acc;
@@ -7,13 +14,6 @@
     --lines: #ababab;
 }
 
-
-/* index.html */
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background:var(--background);
-}
 
 h1 {
     color: #333;
@@ -82,12 +82,15 @@ th, td {
 
 /* CATALOGO */
 
+
 .catalog-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
     margin-top: 32px;
 }
+
+
 /* estilos de la card */
 .card {
     background: var(--background-card);
@@ -111,7 +114,14 @@ th, td {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 12px;
+    transition: transform 0.3s ease-in-out;
 }
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+
 .card h2 {
     margin: 0 0 8px 0;
     font-size: 1.2rem;
@@ -168,3 +178,25 @@ th, td {
 #closeModal:hover {
     color: #ff1818;
 }
+
+
+
+/* Contenedor de los botones en la celda */
+td .actions {
+    display: flex;
+    gap: 15px; 
+}
+
+
+/* Colores */
+td .btn-edit, .btn-delete {
+    background-color: var(--button-color);
+}
+
+td .btn-edit:hover,
+td .btn-delete:hover {
+    background-color: var(--text-color);
+    color: var(--button-color);
+}
+
+
