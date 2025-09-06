@@ -14,6 +14,7 @@ const modalName = document.getElementById("modal-name");
 const modalImg = document.getElementById("modal-img");
 const modalDesc = document.getElementById("modal-desc");
 const modalPrice = document.getElementById("modal-price");
+const modalStock = document.getElementById("modal-stock");
 
 // Función principal para cargar los items desde la API
 async function loadCatalog() {
@@ -65,6 +66,7 @@ function renderItem(item) {
       modalImg.src = fullItem.img || "https://picsum.photos/300/200";
       modalDesc.textContent = fullItem.description;
       modalPrice.textContent = fullItem.precio ? `$${fullItem.precio}` : "N/A";
+      modalStock.textContent = fullItem.stock !== undefined ? fullItem.stock : "N/A";
 
       modal.classList.remove("hidden");
     } catch (err) {
