@@ -48,7 +48,7 @@ function renderItem(item) {
 
     // TODO: Asignar los datos del item (name, description, etc.)
      card.innerHTML = `
-        <img src="${item.img || './img/default.png'}" alt="${item.name}">
+        <img src="${item.img || 'https://picsum.photos/300/200'}" alt="${item.name}">
         <h3>${item.name}</h3>
         <p>${item.description}</p>
         <button class="details-btn">Ver más</button>
@@ -60,7 +60,7 @@ function renderItem(item) {
     // Evento del botón "Ver más" para abrir el modal con detalle
     card.querySelector(".details-btn").addEventListener("click", () => {
         modalName.textContent = item.name;
-        modalImg.src = item.img || "./img/default.png";
+        modalImg.src = item.img || "https://picsum.photos/300/200";
         modalDesc.textContent = item.description;
         modalPrice.textContent = item.precio ? `$${item.precio}` : "N/A";
 
@@ -68,10 +68,16 @@ function renderItem(item) {
     });
 }
 
-
 // Cerrar modal al dar click en el botón de cerrar
 closeModal.addEventListener("click", () => {
     modal.classList.add("hidden");
+});
+
+// Cerrar modal al hacer clic fuera del contenido
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.add("hidden");
+    }
 });
 
 // Inicializar el catálogo cuando cargue la página
